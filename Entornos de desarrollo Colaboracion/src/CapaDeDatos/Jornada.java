@@ -1,4 +1,4 @@
-package CapaDeNegocio;
+package CapaDeDatos;
 import java.sql.Date;
 /**
  * 

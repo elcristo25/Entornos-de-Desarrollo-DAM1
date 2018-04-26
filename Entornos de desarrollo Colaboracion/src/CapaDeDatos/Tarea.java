@@ -1,4 +1,4 @@
-package CapaDeNegocio;
+package CapaDeDatos;
 /***
  * 
  * @author dam120
