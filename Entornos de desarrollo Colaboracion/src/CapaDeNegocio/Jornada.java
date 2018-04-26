@@ -1,5 +1,5 @@
+package CapaDeNegocio;
 import java.sql.Date;
-
 /**
  * 
  * @author dam120

@@ -1,4 +1,4 @@
-
+package CapaDeNegocio;
 /**
  * 
  * @author dam120
@@ -23,7 +23,7 @@ public class Tramo{
 	}
 	
 	public Tramo(Tramo _tramo) {
-		this.id = _tramo.id;
+		this.id = _tramo.getId();
 		this.inicio = _tramo.getInicio();
 		this.fin = _tramo.getFin();
 		this.numPaneles = _tramo.getNumPaneles();
