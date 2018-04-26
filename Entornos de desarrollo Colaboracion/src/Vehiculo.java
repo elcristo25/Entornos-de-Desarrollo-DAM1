@@ -1,6 +1,6 @@
 
 public class Vehiculo {
-	
+	private int id;
 	private String matricula;
 	private String modelo;
 	private boolean remolque;
@@ -9,17 +9,28 @@ public class Vehiculo {
 		
 	}
 	
-	public Vehiculo(String matricula, String modelo, boolean remolque) {
+	public Vehiculo(int id,String matricula, String modelo, boolean remolque) {
+		this.id=id;
 		this.matricula = matricula;
 		this.modelo = modelo;
 		this.remolque = remolque;
 	}
 	
 	public Vehiculo(Vehiculo v) {
+		this.id=v.id;
 		this.matricula = v.matricula;
 		this.modelo = v.modelo;
 		this.remolque = v.remolque;
 	}
+	
+	public int getId() {
+		return  id;
+	}
+	
+	public void setId(int id) {
+		this.id=id;
+	}
+	
 	public String getMatricula() {
         return matricula;
     }
