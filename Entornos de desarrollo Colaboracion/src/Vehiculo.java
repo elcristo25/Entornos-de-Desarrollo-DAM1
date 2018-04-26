@@ -20,4 +20,28 @@ public class Vehiculo {
 		this.modelo = v.modelo;
 		this.remolque = v.remolque;
 	}
-}
+	public String getMatricula() {
+        return matricula;
+    }
+
+    public void setMatricula(String matricula) {
+        this.matricula = matricula;
+    }
+
+    public String getModelo() {
+        return modelo;
+    }
+
+    public void setModelo(String modelo) {
+        this.modelo = modelo;
+    }
+
+    public boolean isRemolque() {
+        return remolque;
+    }
+
+    public void setRemolque(boolean remolque) {
+        this.remolque = remolque;
+    }
+
+    }
