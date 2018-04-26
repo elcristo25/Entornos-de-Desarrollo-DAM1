@@ -1,13 +1,10 @@
 
-public class TCarretera {
-private int id;
+public class TCarretera extends Trabajador {
 
-public int getId() {
-	return id;
-}
-
-public void setId(int id) {
-	this.id = id;
-}
+	public TCarretera() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 
 }
+
