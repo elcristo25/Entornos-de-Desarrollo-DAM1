@@ -10,6 +10,11 @@ public class Flota {
 
     public Flota() {
     }
+    
+    public Flota(Flota f) {
+    	this.id=f.id;
+    	this.nombre=f.nombre;
+    }
 
     public int getId() {
         return id;

@@ -4,16 +4,18 @@ public class Vehiculo {
 	private String matricula;
 	private String modelo;
 	private boolean remolque;
+	private Informe in;
 	
 	public Vehiculo() {
 		
 	}
 	
-	public Vehiculo(int id,String matricula, String modelo, boolean remolque) {
+	public Vehiculo(int id,String matricula, String modelo, boolean remolque, Informe in) {
 		this.id=id;
 		this.matricula = matricula;
 		this.modelo = modelo;
 		this.remolque = remolque;
+		this.in=in;
 	}
 	
 	public Vehiculo(Vehiculo v) {
@@ -21,6 +23,7 @@ public class Vehiculo {
 		this.matricula = v.matricula;
 		this.modelo = v.modelo;
 		this.remolque = v.remolque;
+		this.in=v.in;
 	}
 	
 	public int getId() {
@@ -53,6 +56,14 @@ public class Vehiculo {
 
     public void setRemolque(boolean remolque) {
         this.remolque = remolque;
+    }
+    
+    public Informe getIn() {
+    	return in;
+    }
+    
+    public void setIn(Informe in) {
+    	this.in=in;
     }
 
     }
