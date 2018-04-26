@@ -1,4 +1,3 @@
-
 /**
  * 
  * @author DAM120 Christian Piñera Diez
@@ -8,6 +7,6 @@
 public class MainClass {
 
 	public static void main(String[] args) {
-		//COmentario de prueba.
+		
 	}
 }
