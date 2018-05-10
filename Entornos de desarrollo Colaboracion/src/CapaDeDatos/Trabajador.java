@@ -1,4 +1,4 @@
-
+package CapaDeDatos;
 public class Trabajador {
 private int id;
 private String nif;

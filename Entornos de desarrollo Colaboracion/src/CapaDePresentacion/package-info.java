@@ -5,4 +5,4 @@
  * @author dam120
  *
  */
-package CapaDeNegocio;
+package CapaDePresentacion;

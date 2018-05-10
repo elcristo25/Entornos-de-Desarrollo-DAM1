@@ -1,3 +1,4 @@
+package CapaDeDatos;
 import java.util.Date;
 
 public class Pago {

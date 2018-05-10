@@ -1,4 +1,4 @@
-
+package CapaDeDatos;
 public class TCarretera extends Trabajador {
 
 	public TCarretera() {

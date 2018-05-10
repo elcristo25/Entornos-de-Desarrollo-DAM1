@@ -1,4 +1,4 @@
-
+package CapaDeDatos;
 public class Peaje {
 		
 	private int id;
