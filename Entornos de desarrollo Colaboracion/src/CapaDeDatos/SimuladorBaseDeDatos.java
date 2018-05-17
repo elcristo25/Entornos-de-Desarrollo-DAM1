@@ -4,9 +4,9 @@ import java.util.ArrayList;
 
 
 public class SimuladorBaseDeDatos {
-	ArrayList<Jornada> jornadas;
-	ArrayList<Tramo> tramos;
-	ArrayList<Tarea> tareas;
+	public ArrayList<Jornada> jornadas = new ArrayList<>();
+	public ArrayList<Tramo> tramos = new ArrayList<>();
+	public ArrayList<Tarea> tareas = new ArrayList<>();
 	
 	public String InsertarJornada(Jornada _nuevaJornada) {
 		return this.jornadas.add(_nuevaJornada) ? "OK" : "Error al insetar"; 
