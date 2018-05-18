@@ -8,12 +8,13 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
+import javax.swing.JButton;
 
 public class PInforme extends JFrame {
 
 	private JPanel contentPane;
-	private JTextField textField;
-	private JTextField textField_1;
+	private JTextField txtId;
+	private JTextField txtDescripcion;
 
 	/**
 	 * Launch the application.
@@ -35,6 +36,7 @@ public class PInforme extends JFrame {
 	 * Create the frame.
 	 */
 	public PInforme() {
+		setTitle("GESTI\u00D3N DE INFORMES");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
@@ -46,19 +48,26 @@ public class PInforme extends JFrame {
 		lblId.setBounds(30, 25, 46, 14);
 		contentPane.add(lblId);
 		
-		textField = new JTextField();
-		textField.setBounds(115, 22, 123, 20);
-		contentPane.add(textField);
-		textField.setColumns(10);
+		txtId = new JTextField();
+		txtId.setBounds(115, 22, 123, 20);
+		contentPane.add(txtId);
+		txtId.setColumns(10);
 		
 		JLabel lblDescripcion = new JLabel("DESCRIPCION:");
 		lblDescripcion.setBounds(30, 77, 79, 14);
 		contentPane.add(lblDescripcion);
 		
-		textField_1 = new JTextField();
-		textField_1.setBounds(115, 74, 123, 20);
-		contentPane.add(textField_1);
-		textField_1.setColumns(10);
+		txtDescripcion = new JTextField();
+		txtDescripcion.setBounds(115, 74, 123, 20);
+		contentPane.add(txtDescripcion);
+		txtDescripcion.setColumns(10);
+		
+		JButton btnGuardar = new JButton("Guardar");
+		btnGuardar.setBounds(207, 228, 89, 23);
+		contentPane.add(btnGuardar);
+		
+		JButton btnEliminar = new JButton("Eliminar");
+		btnEliminar.setBounds(318, 228, 89, 23);
+		contentPane.add(btnEliminar);
 	}
-
 }

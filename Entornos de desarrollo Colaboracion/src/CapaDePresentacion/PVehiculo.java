@@ -8,13 +8,16 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class PVehiculo extends JFrame {
 
 	private JPanel contentPane;
-	private JTextField textField_1;
-	private JTextField textField_2;
-	private JTextField textField_3;
+	private JTextField txtMatricula;
+	private JTextField txtModelo;
+	private JTextField txtRemolque;
 
 	/**
 	 * Launch the application.
@@ -36,6 +39,7 @@ public class PVehiculo extends JFrame {
 	 * Create the frame.
 	 */
 	public PVehiculo() {
+		setTitle("GESTI\u00D3N DE VEH\u00CDCULOS");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
@@ -51,28 +55,40 @@ public class PVehiculo extends JFrame {
 		lblMatricula.setBounds(38, 28, 67, 14);
 		contentPane.add(lblMatricula);
 		
-		textField_1 = new JTextField();
-		textField_1.setBounds(115, 25, 117, 20);
-		contentPane.add(textField_1);
-		textField_1.setColumns(10);
+		txtMatricula = new JTextField();
+		txtMatricula.setBounds(115, 25, 117, 20);
+		contentPane.add(txtMatricula);
+		txtMatricula.setColumns(10);
 		
 		JLabel lblModelo = new JLabel("MODELO:");
 		lblModelo.setBounds(38, 79, 67, 14);
 		contentPane.add(lblModelo);
 		
-		textField_2 = new JTextField();
-		textField_2.setBounds(115, 76, 117, 20);
-		contentPane.add(textField_2);
-		textField_2.setColumns(10);
+		txtModelo = new JTextField();
+		txtModelo.setBounds(115, 76, 117, 20);
+		contentPane.add(txtModelo);
+		txtModelo.setColumns(10);
 		
 		JLabel lblRemolque = new JLabel("REMOLQUE:");
 		lblRemolque.setBounds(38, 129, 67, 14);
 		contentPane.add(lblRemolque);
 		
-		textField_3 = new JTextField();
-		textField_3.setBounds(115, 126, 117, 20);
-		contentPane.add(textField_3);
-		textField_3.setColumns(10);
+		txtRemolque = new JTextField();
+		txtRemolque.setBounds(115, 126, 117, 20);
+		contentPane.add(txtRemolque);
+		txtRemolque.setColumns(10);
+		
+		JButton btnGuardar = new JButton("Guardar");
+		btnGuardar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+			}
+		});
+		btnGuardar.setBounds(206, 228, 89, 23);
+		contentPane.add(btnGuardar);
+		
+		JButton btnEliminar = new JButton("Eliminar");
+		btnEliminar.setBounds(305, 228, 89, 23);
+		contentPane.add(btnEliminar);
 	}
 
 }

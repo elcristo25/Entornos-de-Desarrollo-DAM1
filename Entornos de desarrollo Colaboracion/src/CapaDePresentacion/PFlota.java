@@ -13,7 +13,7 @@ public class PFlota extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField txtId;
-	private JTextField textField;
+	private JTextField txtNombre;
 
 	/**
 	 * Launch the application.
@@ -35,6 +35,7 @@ public class PFlota extends JFrame {
 	 * Create the frame.
 	 */
 	public PFlota() {
+		setTitle("GESTI\u00D3N DE FLOTAS");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
@@ -51,10 +52,10 @@ public class PFlota extends JFrame {
 		lblId.setBounds(39, 27, 46, 17);
 		contentPane.add(lblId);
 		
-		textField = new JTextField();
-		textField.setBounds(95, 73, 126, 20);
-		contentPane.add(textField);
-		textField.setColumns(10);
+		txtNombre = new JTextField();
+		txtNombre.setBounds(95, 73, 126, 20);
+		contentPane.add(txtNombre);
+		txtNombre.setColumns(10);
 		
 		JLabel lblNombre = new JLabel("NOMBRE:");
 		lblNombre.setBounds(24, 76, 46, 14);
