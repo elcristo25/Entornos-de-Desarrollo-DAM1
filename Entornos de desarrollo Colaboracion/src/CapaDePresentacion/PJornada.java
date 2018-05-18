@@ -93,7 +93,7 @@ public class PJornada extends JFrame {
 	public PJornada() {
 		setAutoRequestFocus(false);
 		setTitle("\t\t.:.JORNADA.:.");
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 522, 279);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));

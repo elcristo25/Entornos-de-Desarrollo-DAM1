@@ -25,16 +25,22 @@ public class PMainForm extends JFrame {
 	public PMainForm() {
 		setTitle(".:.Gestion de Autopistas.:.");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 496, 203);
+		setBounds(100, 100, 662, 233);
 		contentPane = new JPanel();
 		contentPane.setBackground(Color.WHITE);
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JButton btnGestionarTramos = new JButton("Gestionar Tramos");
-		btnGestionarTramos.setBounds(22, 24, 130, 23);
-		contentPane.add(btnGestionarTramos);
+		JButton btnGestionarPagos = new JButton("Gestionar Pagos");
+		btnGestionarPagos.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				/*PPago panelPago = new PPago();
+				panelPago.setVisible(true);*/
+			}
+		});
+		btnGestionarPagos.setBounds(33, 30, 161, 23);
+		contentPane.add(btnGestionarPagos);
 		
 		JButton btnGestionarJornadas = new JButton("Gestionar Jornadas");
 		btnGestionarJornadas.addActionListener(new ActionListener() {
@@ -43,35 +49,68 @@ public class PMainForm extends JFrame {
 				panelJornada.setVisible(true);
 			}
 		});
-		btnGestionarJornadas.setBounds(22, 71, 130, 23);
+		btnGestionarJornadas.setBounds(227, 109, 182, 23);
 		contentPane.add(btnGestionarJornadas);
 		
-		JButton btnGestionarTareas = new JButton("Gestionar Tareas");
-		btnGestionarTareas.setBounds(22, 118, 130, 23);
-		contentPane.add(btnGestionarTareas);
-		
-		JButton btnGestionar = new JButton("Gestionar Pagos");
-		btnGestionar.setBounds(326, 118, 130, 23);
-		contentPane.add(btnGestionar);
+		JButton btnGestionarTramos = new JButton("Gestionar Tramos");
+		btnGestionarTramos.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				PTramo panelTramo = new PTramo();
+				panelTramo.setVisible(true);
+			}
+			
+		});
+		btnGestionarTramos.setBounds(33, 136, 161, 23);
+		contentPane.add(btnGestionarTramos);
 		
 		JButton btnGestionarPeajes = new JButton("Gestionar Peajes");
-		btnGestionarPeajes.setBounds(174, 118, 130, 23);
+		btnGestionarPeajes.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				/*PPeaje panelPeaje = new PPeaje();
+				panelPeaje.setVisible(true);*/
+			}
+		});
+		btnGestionarPeajes.setBounds(442, 136, 169, 23);
 		contentPane.add(btnGestionarPeajes);
 		
 		JButton btnGestionarVehiculo = new JButton("Gestionar Vehiculos");
-		btnGestionarVehiculo.setBounds(174, 71, 130, 23);
+		btnGestionarVehiculo.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				/*PVehiculo panelVehiculo = new PVehiculo();
+				panelVehiculo.setVisible(true);*/
+			}
+		});
+		btnGestionarVehiculo.setBounds(33, 83, 161, 23);
 		contentPane.add(btnGestionarVehiculo);
 		
 		JButton btnGestionarFlota = new JButton("Gestionar Flota");
-		btnGestionarFlota.setBounds(174, 24, 130, 23);
+		btnGestionarFlota.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				/*PFlota panelFlota = new PFlota();
+				panelFlota.setVisible(true);*/
+			}
+		});
+		btnGestionarFlota.setBounds(442, 83, 169, 23);
 		contentPane.add(btnGestionarFlota);
 		
-		JButton btnGestionarinformes = new JButton("GestionarInformes");
-		btnGestionarinformes.setBounds(326, 24, 130, 23);
+		JButton btnGestionarinformes = new JButton("Gestionar Informes");
+		btnGestionarinformes.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				/*PInforme panelInforme = new PInforme();
+				panelInforme.setVisible(true);*/
+			}
+		});
+		btnGestionarinformes.setBounds(443, 30, 169, 23);
 		contentPane.add(btnGestionarinformes);
 		
 		JButton btnGestionarTrabajadores = new JButton("Gestionar Trabajadores");
-		btnGestionarTrabajadores.setBounds(326, 71, 130, 23);
+		btnGestionarTrabajadores.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				/*PTrabajador panelTrabajador = new PTrabajador();
+				panelTrabajador.setVisible(true);*/
+			}
+		});
+		btnGestionarTrabajadores.setBounds(227, 52, 183, 23);
 		contentPane.add(btnGestionarTrabajadores);
 	}
 }
