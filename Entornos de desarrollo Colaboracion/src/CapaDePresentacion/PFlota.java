@@ -8,6 +8,9 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JTextField;
 import javax.swing.JLabel;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class PFlota extends JFrame {
 
@@ -60,5 +63,21 @@ public class PFlota extends JFrame {
 		JLabel lblNombre = new JLabel("NOMBRE:");
 		lblNombre.setBounds(24, 76, 46, 14);
 		contentPane.add(lblNombre);
+		
+		JButton btnGuardar = new JButton("Guardar");
+		btnGuardar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		btnGuardar.setBounds(179, 228, 89, 23);
+		contentPane.add(btnGuardar);
+		
+		JButton btnEliminar = new JButton("Eliminar");
+		btnEliminar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		btnEliminar.setBounds(306, 228, 89, 23);
+		contentPane.add(btnEliminar);
 	}
 }
