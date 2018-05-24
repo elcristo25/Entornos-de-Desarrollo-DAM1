@@ -56,7 +56,7 @@ public class PVehiculo extends JFrame {
 		contentPane.add(lblMatricula);
 		
 		txtMatricula = new JTextField();
-		txtMatricula.setBounds(115, 25, 117, 20);
+		txtMatricula.setBounds(178, 25, 117, 20);
 		contentPane.add(txtMatricula);
 		txtMatricula.setColumns(10);
 		
@@ -65,7 +65,7 @@ public class PVehiculo extends JFrame {
 		contentPane.add(lblModelo);
 		
 		txtModelo = new JTextField();
-		txtModelo.setBounds(115, 76, 117, 20);
+		txtModelo.setBounds(178, 76, 117, 20);
 		contentPane.add(txtModelo);
 		txtModelo.setColumns(10);
 		
