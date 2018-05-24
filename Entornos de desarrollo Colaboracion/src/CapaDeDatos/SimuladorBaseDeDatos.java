@@ -31,7 +31,7 @@ public class SimuladorBaseDeDatos {
 	}
 	
 	public String InsertarInforme(Informe _nuevoInforme) {
-		return this.informes.add(_nuevoInforme) ? "OK" : "Error al insetar"; 
+		return this.informes.add(_nuevoInforme) ? "OK" : "Error al insetar";
 	}
 	
 	public String BorrarJornada(int _Id) {

@@ -1,10 +1,8 @@
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
-
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
-
 import CapaDeDatos.*;
 import CapaDePresentacion.*;
 import java.awt.Color;
@@ -35,8 +33,8 @@ public class PMainForm extends JFrame {
 		JButton btnGestionarPagos = new JButton("Gestionar Pagos");
 		btnGestionarPagos.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				/*PPago panelPago = new PPago();
-				panelPago.setVisible(true);*/
+				PPago panelPago = new PPago();
+				panelPago.setVisible(true);
 			}
 		});
 		btnGestionarPagos.setBounds(33, 30, 161, 23);
@@ -66,8 +64,8 @@ public class PMainForm extends JFrame {
 		JButton btnGestionarPeajes = new JButton("Gestionar Peajes");
 		btnGestionarPeajes.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				/*PPeaje panelPeaje = new PPeaje();
-				panelPeaje.setVisible(true);*/
+				PPeaje panelPeaje = new PPeaje();
+				panelPeaje.setVisible(true);
 			}
 		});
 		btnGestionarPeajes.setBounds(442, 136, 169, 23);
@@ -76,8 +74,8 @@ public class PMainForm extends JFrame {
 		JButton btnGestionarVehiculo = new JButton("Gestionar Vehiculos");
 		btnGestionarVehiculo.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				/*PVehiculo panelVehiculo = new PVehiculo();
-				panelVehiculo.setVisible(true);*/
+				PVehiculo panelVehiculo = new PVehiculo();
+				panelVehiculo.setVisible(true);
 			}
 		});
 		btnGestionarVehiculo.setBounds(33, 83, 161, 23);
@@ -86,8 +84,8 @@ public class PMainForm extends JFrame {
 		JButton btnGestionarFlota = new JButton("Gestionar Flota");
 		btnGestionarFlota.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				/*PFlota panelFlota = new PFlota();
-				panelFlota.setVisible(true);*/
+				PFlota panelFlota = new PFlota();
+				panelFlota.setVisible(true);
 			}
 		});
 		btnGestionarFlota.setBounds(442, 83, 169, 23);
@@ -96,8 +94,8 @@ public class PMainForm extends JFrame {
 		JButton btnGestionarinformes = new JButton("Gestionar Informes");
 		btnGestionarinformes.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				/*PInforme panelInforme = new PInforme();
-				panelInforme.setVisible(true);*/
+				PInforme panelInforme = new PInforme();
+				panelInforme.setVisible(true);
 			}
 		});
 		btnGestionarinformes.setBounds(443, 30, 169, 23);
@@ -106,8 +104,8 @@ public class PMainForm extends JFrame {
 		JButton btnGestionarTrabajadores = new JButton("Gestionar Trabajadores");
 		btnGestionarTrabajadores.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				/*PTrabajador panelTrabajador = new PTrabajador();
-				panelTrabajador.setVisible(true);*/
+				PTrabajador panelTrabajador = new PTrabajador();
+				panelTrabajador.setVisible(true);
 			}
 		});
 		btnGestionarTrabajadores.setBounds(227, 52, 183, 23);
