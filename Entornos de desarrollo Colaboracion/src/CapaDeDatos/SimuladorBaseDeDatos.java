@@ -26,7 +26,7 @@ public class SimuladorBaseDeDatos {
 		return this.vehiculos.add(_nuevoVehiculo) ? "OK" : "Error al insetar"; 
 	}
 	
-	public String InsertarFlotas(Flotas _nuevoFlotas) {
+	public String InsertarFlotas(Flota _nuevoFlotas) {
 		return this.flotas.add(_nuevoFlotas) ? "OK" : "Error al insetar"; 
 	}
 	
