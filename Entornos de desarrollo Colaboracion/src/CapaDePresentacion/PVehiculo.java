@@ -11,13 +11,13 @@ import javax.swing.JTextField;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.JRadioButton;
 
 public class PVehiculo extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField txtMatricula;
 	private JTextField txtModelo;
-	private JTextField txtRemolque;
 
 	/**
 	 * Launch the application.
@@ -56,7 +56,7 @@ public class PVehiculo extends JFrame {
 		contentPane.add(lblMatricula);
 		
 		txtMatricula = new JTextField();
-		txtMatricula.setBounds(115, 25, 117, 20);
+		txtMatricula.setBounds(178, 25, 117, 20);
 		contentPane.add(txtMatricula);
 		txtMatricula.setColumns(10);
 		
@@ -65,18 +65,13 @@ public class PVehiculo extends JFrame {
 		contentPane.add(lblModelo);
 		
 		txtModelo = new JTextField();
-		txtModelo.setBounds(115, 76, 117, 20);
+		txtModelo.setBounds(178, 76, 117, 20);
 		contentPane.add(txtModelo);
 		txtModelo.setColumns(10);
 		
 		JLabel lblRemolque = new JLabel("REMOLQUE:");
 		lblRemolque.setBounds(38, 129, 67, 14);
 		contentPane.add(lblRemolque);
-		
-		txtRemolque = new JTextField();
-		txtRemolque.setBounds(115, 126, 117, 20);
-		contentPane.add(txtRemolque);
-		txtRemolque.setColumns(10);
 		
 		JButton btnGuardar = new JButton("Guardar");
 		btnGuardar.addActionListener(new ActionListener() {
@@ -89,6 +84,13 @@ public class PVehiculo extends JFrame {
 		JButton btnEliminar = new JButton("Eliminar");
 		btnEliminar.setBounds(305, 228, 89, 23);
 		contentPane.add(btnEliminar);
+		
+		JRadioButton rdbtnNewRadioButton = new JRadioButton("NO");
+		rdbtnNewRadioButton.setBounds(288, 125, 109, 23);
+		contentPane.add(rdbtnNewRadioButton);
+		
+		JRadioButton rdbtnNewRadioButton_1 = new JRadioButton("SI");
+		rdbtnNewRadioButton_1.setBounds(136, 125, 109, 23);
+		contentPane.add(rdbtnNewRadioButton_1);
 	}
-
 }
