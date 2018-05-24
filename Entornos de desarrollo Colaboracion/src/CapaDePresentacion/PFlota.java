@@ -39,7 +39,7 @@ public class PFlota extends JFrame {
 	 */
 	public PFlota() {
 		setTitle("GESTI\u00D3N DE FLOTAS");
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));

@@ -41,7 +41,7 @@ public class PTrabajador extends JFrame {
 	 */
 	public PTrabajador() {
 		setTitle("Gestion de PTrabajador");
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 534, 390);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
