@@ -123,9 +123,19 @@ public class PVehiculo extends JFrame {
 	
 	
 	private boolean ValidarMatricula(String matricula) {
-		if(matricula)
-		
-		
-		return true;
+		if(matricula.matches("^[0-9]{4}[A-Z]{3}$")) {
+			return true;
+		}else {
+	    return false;
+		}
 	}
-}
+	
+	private boolean ValidarId(int id) {
+		if(id>0 && id<1000) {
+		return true;
+		}else {
+			return false;
+		}
+	}
+	}
+
