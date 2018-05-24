@@ -7,6 +7,7 @@
 public class MainClass {
 
 	public static void main(String[] args) {
-		
+		PMainForm frame = new PMainForm();
+		frame.setVisible(true);
 	}
 }
