@@ -38,7 +38,7 @@ public class PJornada extends JFrame {
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
+	public static void main(String[] args) { 
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
@@ -50,41 +50,27 @@ public class PJornada extends JFrame {
 				}
 			}
 		});
-		
 	}
 
-	
-	
+
 	private void RellenarListado() {
 		
-		DefaultTableModel modelo = (DefaultTableModel) table.getModel();
-		String[] datos = {"", "", ""}; // Cantidad de columnas de la tabla
+
+		String[] columnas = {"ID", "Fecha", "Tipo"}; 
+		String[][] datos = new String[3][db.jornadas.size()];
+		if(db.jornadas.size()>0) {
+			for(int i =0; i<datos[0].length;i++) {
+				System.out.println(db.jornadas.get(i).getId());
+				System.out.println(db.jornadas.get(i).getFecha());
+				System.out.println(db.jornadas.get(i).getTipo());
+				datos[0][i] = String.valueOf(db.jornadas.get(i).getId());
+				datos[1][i] = String.valueOf(db.jornadas.get(i).getFecha());
+				datos[2][i] = String.valueOf(db.jornadas.get(i).getTipo());
+			}
 		
-		Iterator<Jornada> it = db.jornadas.iterator();
-		if(it.hasNext()) {
-			Jornada jor = it.next();
-			modelo.addRow(new String[]{String.valueOf(jor.getId()),String.valueOf(jor.getFecha()),String.valueOf(jor.getTipo())});
-			System.out.println(String.valueOf(jor.getId())+" "+String.valueOf(jor.getFecha())+" "+String.valueOf(jor.getTipo()));
+		this.table = new JTable(datos, columnas);
 		}
-		this.table = new JTable(modelo);
-		
-		
-		
-		/*TableColumn columna = new TableColumn();
-		columna.setHeaderValue("ID");
-		this.table.addColumn(new TableColumn());
-		
-		columna = new TableColumn();
-		columna.setHeaderValue("Fecha");
-		this.table.addColumn(new TableColumn());
-		
-		columna = new TableColumn();
-		columna.setHeaderValue("Tipo");
-		this.table.addColumn(new TableColumn());*/
-		
-		
-		
-		
+
 	}
 	
 	/**
@@ -149,7 +135,7 @@ public class PJornada extends JFrame {
 		contentPane.add(btnEliminar);
 		
 		table = new JTable();
-		table.setBounds(211, 35, 285, 195);
+		table.setBounds(211, 35, 285, 162);
 		contentPane.add(table);
 	}
 }
