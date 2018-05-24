@@ -52,29 +52,29 @@ public class PVehiculo extends JFrame {
 		contentPane.add(label);
 		
 		JLabel lblMatricula = new JLabel("MATRICULA:");
-		lblMatricula.setBounds(38, 28, 67, 14);
+		lblMatricula.setBounds(38, 28, 113, 14);
 		contentPane.add(lblMatricula);
 		
 		txtMatricula = new JTextField();
-		txtMatricula.setBounds(115, 25, 117, 20);
+		txtMatricula.setBounds(161, 25, 117, 20);
 		contentPane.add(txtMatricula);
 		txtMatricula.setColumns(10);
 		
 		JLabel lblModelo = new JLabel("MODELO:");
-		lblModelo.setBounds(38, 79, 67, 14);
+		lblModelo.setBounds(38, 79, 113, 14);
 		contentPane.add(lblModelo);
 		
 		txtModelo = new JTextField();
-		txtModelo.setBounds(115, 76, 117, 20);
+		txtModelo.setBounds(161, 76, 117, 20);
 		contentPane.add(txtModelo);
 		txtModelo.setColumns(10);
 		
 		JLabel lblRemolque = new JLabel("REMOLQUE:");
-		lblRemolque.setBounds(38, 129, 67, 14);
+		lblRemolque.setBounds(38, 129, 113, 14);
 		contentPane.add(lblRemolque);
 		
 		txtRemolque = new JTextField();
-		txtRemolque.setBounds(115, 126, 117, 20);
+		txtRemolque.setBounds(161, 126, 117, 20);
 		contentPane.add(txtRemolque);
 		txtRemolque.setColumns(10);
 		
