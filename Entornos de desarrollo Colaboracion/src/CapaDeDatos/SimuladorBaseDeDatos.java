@@ -10,20 +10,26 @@ public class SimuladorBaseDeDatos {
 	public ArrayList<Vehiculo> vehiculos = new ArrayList<>();
 	public ArrayList<Flota> flotas = new ArrayList<>();
 	public ArrayList<Informe> informes = new ArrayList<>();
-	
+	public ArrayList<Pago> pagos = new ArrayList<>();
+	public ArrayList<Peaje> peajes = new ArrayList<>();
+	public ArrayList<Trabajador> trabajadores = new ArrayList<>();
 	
 	public String InsertarJornada(Jornada _nuevaJornada) {
 		return this.jornadas.add(_nuevaJornada) ? "OK" : "Error al insetar"; 
 	}
+	
 	public String InsertarTramos(Tramo _nuevoTramos) {
 		return this.tramos.add(_nuevoTramos) ? "OK" : "Error al insetar"; 
 	}
+	
 	public String InsertarVehiculo(Vehiculo _nuevoVehiculo) {
 		return this.vehiculos.add(_nuevoVehiculo) ? "OK" : "Error al insetar"; 
 	}
+	
 	public String InsertarFlotas(Flotas _nuevoFlotas) {
 		return this.flotas.add(_nuevoFlotas) ? "OK" : "Error al insetar"; 
 	}
+	
 	public String InsertarInforme(Informe _nuevoInforme) {
 		return this.informes.add(_nuevoInforme) ? "OK" : "Error al insetar"; 
 	}
@@ -42,9 +48,9 @@ public class SimuladorBaseDeDatos {
 	}
 	
 	public String BorrarTramos(int _Id) {
-		Iterator<Tramos> it = tramos.iterator();
+		Iterator<Tramo> it = tramos.iterator();
 		if(it.hasNext()) {
-			Tramos next = it.next();
+			Tramo next = it.next();
 			if(next.getId()==_Id) {
 				it.remove();
 				return "OK";
@@ -66,9 +72,9 @@ public class SimuladorBaseDeDatos {
 	}
 	
 	public String BorrarInformes(int _Id) {
-		Iterator<Informes> it = informes.iterator();
+		Iterator<Informe> it = informes.iterator();
 		if(it.hasNext()) {
-			Informes next = it.next();
+			Informe next = it.next();
 			if(next.getId()==_Id) {
 				it.remove();
 				return "OK";
@@ -78,9 +84,9 @@ public class SimuladorBaseDeDatos {
 	}
 	
 	public String BorrarFlotas(int _Id) {
-		Iterator<Flotas> it = flotas.iterator();
+		Iterator<Flota> it = flotas.iterator();
 		if(it.hasNext()) {
-			Flotas next = it.next();
+			Flota next = it.next();
 			if(next.getId()==_Id) {
 				it.remove();
 				return "OK";
@@ -88,4 +94,41 @@ public class SimuladorBaseDeDatos {
 		}
 		return "Error al borrar";
 	}
+
+	public String BorrarPago(int _Id) {
+		Iterator<Pago> it = pagos.iterator();
+		if(it.hasNext()) {
+			Pago next = it.next();
+			if(next.getId()==_Id) {
+				it.remove();
+				return "OK";
+			}
+		}
+		return "Error al borrar";
+	}
+	
+	public String BorrarPeaje(int _Id) {
+		Iterator<Peaje> it = peajes.iterator();
+		if(it.hasNext()) {
+			Peaje next = it.next();
+			if(next.getId()==_Id) {
+				it.remove();
+				return "OK";
+			}
+		}
+		return "Error al borrar";
+	}
+	
+	public String BorrarTrabajador(int _Id) {
+		Iterator<Flota> it = flotas.iterator();
+		if(it.hasNext()) {
+			Flota next = it.next();
+			if(next.getId()==_Id) {
+				it.remove();
+				return "OK";
+			}
+		}
+		return "Error al borrar";
+	}
+
 }
