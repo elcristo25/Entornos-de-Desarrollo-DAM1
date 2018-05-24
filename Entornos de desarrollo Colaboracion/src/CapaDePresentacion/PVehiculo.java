@@ -6,8 +6,13 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import CapaDeDatos.SimuladorBaseDeDatos;
+import CapaDeDatos.Vehiculo;
+
 import javax.swing.JLabel;
 import javax.swing.JTextField;
+import javax.swing.ButtonGroup;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
@@ -18,6 +23,9 @@ public class PVehiculo extends JFrame {
 	private JPanel contentPane;
 	private JTextField txtMatricula;
 	private JTextField txtModelo;
+	private ButtonGroup btnGroup;
+	private SimuladorBaseDeDatos bd;
+	private JTextField textField;
 
 	/**
 	 * Launch the application.
@@ -52,30 +60,34 @@ public class PVehiculo extends JFrame {
 		contentPane.add(label);
 		
 		JLabel lblMatricula = new JLabel("MATRICULA:");
-		lblMatricula.setBounds(38, 28, 67, 14);
+		lblMatricula.setBounds(38, 87, 67, 14);
 		contentPane.add(lblMatricula);
 		
 		txtMatricula = new JTextField();
-		txtMatricula.setBounds(178, 25, 117, 20);
+		txtMatricula.setBounds(178, 84, 117, 20);
 		contentPane.add(txtMatricula);
 		txtMatricula.setColumns(10);
 		
 		JLabel lblModelo = new JLabel("MODELO:");
-		lblModelo.setBounds(38, 79, 67, 14);
+		lblModelo.setBounds(38, 137, 67, 14);
 		contentPane.add(lblModelo);
 		
 		txtModelo = new JTextField();
-		txtModelo.setBounds(178, 76, 117, 20);
+		txtModelo.setBounds(178, 134, 117, 20);
 		contentPane.add(txtModelo);
 		txtModelo.setColumns(10);
 		
 		JLabel lblRemolque = new JLabel("REMOLQUE:");
-		lblRemolque.setBounds(38, 129, 67, 14);
+		lblRemolque.setBounds(38, 185, 67, 14);
 		contentPane.add(lblRemolque);
 		
 		JButton btnGuardar = new JButton("Guardar");
 		btnGuardar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				String matricula = txtMatricula.getText();
+				ValidarMatricula(matricula);
+				Vehiculo v = new Vehiculo(1234,"7894 JJJ","Audi A6",true);
+				bd.InsertarVehiculo(v);
 			}
 		});
 		btnGuardar.setBounds(206, 228, 89, 23);
@@ -85,12 +97,35 @@ public class PVehiculo extends JFrame {
 		btnEliminar.setBounds(305, 228, 89, 23);
 		contentPane.add(btnEliminar);
 		
-		JRadioButton rdbtnNewRadioButton = new JRadioButton("NO");
-		rdbtnNewRadioButton.setBounds(288, 125, 109, 23);
-		contentPane.add(rdbtnNewRadioButton);
+		JRadioButton rdbtnNo = new JRadioButton("NO");
+		rdbtnNo.setBounds(285, 181, 109, 23);
+		contentPane.add(rdbtnNo);
 		
-		JRadioButton rdbtnNewRadioButton_1 = new JRadioButton("SI");
-		rdbtnNewRadioButton_1.setBounds(136, 125, 109, 23);
-		contentPane.add(rdbtnNewRadioButton_1);
+		JRadioButton rdbtnSi = new JRadioButton("SI");
+		rdbtnSi.setBounds(134, 181, 109, 23);
+		contentPane.add(rdbtnSi);
+		
+		btnGroup = new ButtonGroup();
+
+		btnGroup.add(rdbtnSi);
+		btnGroup.add(rdbtnNo);
+		
+		textField = new JTextField();
+		textField.setBounds(178, 33, 117, 20);
+		contentPane.add(textField);
+		textField.setColumns(10);
+		
+		JLabel lblId = new JLabel("ID:");
+		lblId.setBounds(38, 36, 46, 14);
+		contentPane.add(lblId);
+	}
+	
+	
+	
+	private boolean ValidarMatricula(String matricula) {
+		if(matricula)
+		
+		
+		return true;
 	}
 }
