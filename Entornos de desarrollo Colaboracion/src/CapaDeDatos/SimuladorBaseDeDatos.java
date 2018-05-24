@@ -34,6 +34,10 @@ public class SimuladorBaseDeDatos {
 		return this.informes.add(_nuevoInforme) ? "OK" : "Error al insetar";
 	}
 	
+	public String InsertarPeaje(Peaje _nuevoPeaje) {
+		return this.peajes.add(_nuevoPeaje) ? "OK" : "Error al insetar";
+	}
+	
 	public String BorrarJornada(int _Id) {
 
 		Iterator<Jornada> it = jornadas.iterator();

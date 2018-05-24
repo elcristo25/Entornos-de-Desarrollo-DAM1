@@ -111,5 +111,7 @@ public class PTrabajador extends JFrame {
 		txtSenior.setBounds(108, 238, 192, 20);
 		contentPane.add(txtSenior);
 	}
+	
+	
 
 }

@@ -6,8 +6,15 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import CapaDeDatos.Peaje;
+import CapaDeDatos.SimuladorBaseDeDatos;
+
 import javax.swing.JLabel;
 import javax.swing.JTextField;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class PPeaje extends JFrame {
 
@@ -15,6 +22,7 @@ public class PPeaje extends JFrame {
 	private JTextField txtID;
 	private JTextField txtPunto;
 	private JTextField txtSentido;
+	private SimuladorBaseDeDatos db = new SimuladorBaseDeDatos();
 
 	/**
 	 * Launch the application.
@@ -70,6 +78,37 @@ public class PPeaje extends JFrame {
 		txtSentido.setColumns(10);
 		txtSentido.setBounds(101, 123, 192, 20);
 		contentPane.add(txtSentido);
+		
+		JButton btnNewButton = new JButton("New button");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				String id = txtID.getText();
+				String punto = txtPunto.getText();
+				String sentido = txtSentido.getText();
+				
+				
+				
+				//SI TODOS LOS DATOS SON VALIDOS.
+				Peaje peaje = new Peaje(//////////////);
+				db.InsertarPeaje(peaje);
+			}
+		});
+		btnNewButton.setBounds(141, 195, 89, 23);
+		contentPane.add(btnNewButton);
 	}
-
+	
+	private boolean ValidarId() {
+		
+	}
+	//Debe ser un numero de 0-1000 y acabar en KM.
+	private boolean ValidarPunto() {
+		
+	}
+	//Debe ser valido solo Izquierda o Derecha.
+	private boolean ValidarSentido() {
+		if(izquierda o derecha)
+			return true;
+		else
+			return false;
+	}
 }
