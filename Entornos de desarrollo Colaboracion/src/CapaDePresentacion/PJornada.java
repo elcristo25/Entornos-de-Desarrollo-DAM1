@@ -33,7 +33,6 @@ public class PJornada extends JFrame {
 	private JTextField txtId;
 	private JTextField txtFecha;
 	private JTextField txtTipo;
-	private JTable table;
 
 	/**
 	 * Launch the application.
@@ -68,7 +67,6 @@ public class PJornada extends JFrame {
 				datos[2][i] = String.valueOf(db.jornadas.get(i).getTipo());
 			}
 		
-		this.table = new JTable(datos, columnas);
 		}
 
 	}
@@ -80,7 +78,7 @@ public class PJornada extends JFrame {
 		setAutoRequestFocus(false);
 		setTitle("\t\t.:.JORNADA.:.");
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		setBounds(100, 100, 522, 279);
+		setBounds(100, 100, 450, 224);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -116,26 +114,51 @@ public class PJornada extends JFrame {
 		JButton btnGuardar = new JButton("Guardar");
 		btnGuardar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				int i = Integer.parseInt(txtId.getText());
-				int year = Integer.valueOf(txtFecha.getText().substring(0, 4));
-				int month = Integer.valueOf(txtFecha.getText().substring(5, 7));
-				int day = Integer.valueOf(txtFecha.getText().substring(8, 9));
-				Date d = new Date(year, month, day);
-				char c = txtTipo.getText().charAt(0);
-				Jornada jornada = new Jornada(i,d,c);
-				db.InsertarJornada(jornada);
-				RellenarListado();
+				if( ValidarId(txtId.getText())) {
+					if(ValidarFecha(txtFecha.getText().substring(0, 4),txtFecha.getText().substring(5, 7),txtFecha.getText().substring(8, 9))) {
+						if(ValidarTipo(txtTipo.getText())) {
+							int i = Integer.parseInt(txtId.getText());
+							int year = Integer.valueOf(txtFecha.getText().substring(0, 4));
+							int month = Integer.valueOf(txtFecha.getText().substring(5, 7));
+							int day = Integer.valueOf(txtFecha.getText().substring(8, 9));
+							Date d = new Date(year, month, day);
+							char c = txtTipo.getText().charAt(0);
+							Jornada jornada = new Jornada(i,d,c);
+							db.InsertarJornada(jornada);
+							RellenarListado();
+						}
+					}
+				}
 			}
 		});
-		btnGuardar.setBounds(40, 155, 113, 23);
+		btnGuardar.setBounds(243, 34, 113, 23);
 		contentPane.add(btnGuardar);
 		
 		JButton btnEliminar = new JButton("Eliminar");
-		btnEliminar.setBounds(40, 200, 113, 23);
+		btnEliminar.setBounds(243, 89, 113, 23);
 		contentPane.add(btnEliminar);
+	}
+	
+	private boolean ValidarId(String id) {
+		try {
+			int i = Integer.parseInt(id);
+			if(i>0 && i<999) {
+				return true;
+			}
+			return false;
+		}catch(Exception ex) {
+			return false;
+		}
 		
-		table = new JTable();
-		table.setBounds(211, 35, 285, 162);
-		contentPane.add(table);
+	}
+	
+	private boolean ValidarFecha(String year, String month, String day) {
+		
+		return false;
+	}
+	
+	private boolean ValidarTipo(String tipo) {
+		
+		return false;
 	}
 }
