@@ -129,8 +129,6 @@ public class PJornada extends JFrame {
 						}
 					}
 				}
-				
-				
 			}
 		});
 		btnGuardar.setBounds(243, 34, 113, 23);
@@ -142,8 +140,16 @@ public class PJornada extends JFrame {
 	}
 	
 	private boolean ValidarId(String id) {
+		try {
+			int i = Integer.parseInt(id);
+			if(i>0 && i<999) {
+				return true;
+			}
+			return false;
+		}catch(Exception ex) {
+			return false;
+		}
 		
-		return false;
 	}
 	
 	private boolean ValidarFecha(String year, String month, String day) {
