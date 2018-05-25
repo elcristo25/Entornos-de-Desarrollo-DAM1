@@ -43,7 +43,6 @@ public class PJornada extends JFrame {
 				try {
 					PJornada frame = new PJornada();
 					frame.setVisible(true);
-					frame.RellenarListado();
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -51,25 +50,6 @@ public class PJornada extends JFrame {
 		});
 	}
 
-
-	private void RellenarListado() {
-		
-
-		String[] columnas = {"ID", "Fecha", "Tipo"}; 
-		String[][] datos = new String[3][db.jornadas.size()];
-		if(db.jornadas.size()>0) {
-			for(int i =0; i<datos[0].length;i++) {
-				System.out.println(db.jornadas.get(i).getId());
-				System.out.println(db.jornadas.get(i).getFecha());
-				System.out.println(db.jornadas.get(i).getTipo());
-				datos[0][i] = String.valueOf(db.jornadas.get(i).getId());
-				datos[1][i] = String.valueOf(db.jornadas.get(i).getFecha());
-				datos[2][i] = String.valueOf(db.jornadas.get(i).getTipo());
-			}
-		
-		}
-
-	}
 	
 	/**
 	 * Create the frame.
@@ -125,7 +105,6 @@ public class PJornada extends JFrame {
 							char c = txtTipo.getText().charAt(0);
 							Jornada jornada = new Jornada(i,d,c);
 							db.InsertarJornada(jornada);
-							RellenarListado();
 						}
 					}
 				}
@@ -138,7 +117,11 @@ public class PJornada extends JFrame {
 		btnEliminar.setBounds(243, 89, 113, 23);
 		contentPane.add(btnEliminar);
 	}
-	
+	/**
+	 * Método que valida un identificador para la jornada. Serán válidos los identificadores formados por un número de hasta 3 dígitos mayores que 0.
+	 * @param id String que almacena el identificador a validar.
+	 * @return True en caso de ser un identificador válido, false en caso contrario.
+	 */
 	private boolean ValidarId(String id) {
 		try {
 			int i = Integer.parseInt(id);
@@ -151,14 +134,30 @@ public class PJornada extends JFrame {
 		}
 		
 	}
-	
+	/**
+	 * Método que valida una fecha introducida mediante 3 strings. Será válido si la fecha existe.
+	 * @param year String que almacena el año de la fecha.
+	 * @param month String que almacena el mes de la fecha.
+	 * @param day Strign que almacena el día de la fecha.
+	 * @return True si la fecha es válida, false en caso contrario.
+	 */
 	private boolean ValidarFecha(String year, String month, String day) {
-		
-		return false;
+		try {
+			Date fecha  = new Date(Integer.parseInt(year), Integer.parseInt(month), Integer.parseInt(day));
+			return true;
+		}catch(Exception ex) {
+			return false;
+		}
 	}
-	
+	/**
+	 * Método que valida el tipo de jornada. Sólo son válidos C, jornada Completa; o P, jornada Parcial.
+	 * @param tipo Cadena string que almacena el tipo de jornada. 
+	 * @return True si la jornada es válida, false en caso contrario.
+	 */
 	private boolean ValidarTipo(String tipo) {
-		
+		if(tipo.length()==1 && (tipo.charAt(0)=='C' || tipo.charAt(0)=='P')) {
+			return true;
+		}
 		return false;
 	}
 }
