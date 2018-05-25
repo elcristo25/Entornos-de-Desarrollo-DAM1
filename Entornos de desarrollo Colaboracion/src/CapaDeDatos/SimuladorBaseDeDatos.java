@@ -3,8 +3,10 @@ package CapaDeDatos;
 import java.util.ArrayList;
 import java.util.Iterator;
 
+import TestingPackage.ISimuladorBaseDeDatos;
 
-public class SimuladorBaseDeDatos {
+
+public class SimuladorBaseDeDatos implements ISimuladorBaseDeDatos {
 	public ArrayList<Jornada> jornadas = new ArrayList<>();
 	public ArrayList<Tramo> tramos = new ArrayList<>();
 	public ArrayList<Vehiculo> vehiculos = new ArrayList<>();

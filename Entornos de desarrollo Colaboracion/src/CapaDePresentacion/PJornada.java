@@ -122,7 +122,7 @@ public class PJornada extends JFrame {
 	 * @param id String que almacena el identificador a validar.
 	 * @return True en caso de ser un identificador válido, false en caso contrario.
 	 */
-	private boolean ValidarId(String id) {
+	public boolean ValidarId(String id) {
 		try {
 			int i = Integer.parseInt(id);
 			if(i>0 && i<999) {
@@ -141,7 +141,7 @@ public class PJornada extends JFrame {
 	 * @param day Strign que almacena el día de la fecha.
 	 * @return True si la fecha es válida, false en caso contrario.
 	 */
-	private boolean ValidarFecha(String year, String month, String day) {
+	public boolean ValidarFecha(String year, String month, String day) {
 		try {
 			Date fecha  = new Date(Integer.parseInt(year), Integer.parseInt(month), Integer.parseInt(day));
 			return true;
@@ -154,10 +154,13 @@ public class PJornada extends JFrame {
 	 * @param tipo Cadena string que almacena el tipo de jornada. 
 	 * @return True si la jornada es válida, false en caso contrario.
 	 */
-	private boolean ValidarTipo(String tipo) {
-		if(tipo.length()==1 && (tipo.charAt(0)=='C' || tipo.charAt(0)=='P')) {
-			return true;
-		}
+	public boolean ValidarTipo(String tipo) {
+		try {
+			if(tipo.length()==1 && (tipo.charAt(0)=='C' || tipo.charAt(0)=='P')) {
+				return true;
+			}
+			
+		}catch(Exception ex) {}
 		return false;
 	}
 }
