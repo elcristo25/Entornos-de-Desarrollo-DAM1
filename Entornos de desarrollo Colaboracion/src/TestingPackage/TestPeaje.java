@@ -99,7 +99,7 @@ class TestPeaje {
 	/**
 	 * @author Mario Fernandez
 	 */
-	void TestValidarPunto_correcto_ExpectedFalse() {
+	void TestValidarPunto_correcto_ExpectedTrue() {
 		
 		PPeaje peaj = new PPeaje();
 		String punto = "198";
@@ -112,7 +112,7 @@ class TestPeaje {
 	/**
 	 * @author Mario Fernandez
 	 */
-	void TestValidarSentido_I_ExpectedFalse() {
+	void TestValidarSentido_I_ExpectedTrue() {
 		
 		PPeaje peaj = new PPeaje();
 		String sentido = "I";
@@ -125,7 +125,7 @@ class TestPeaje {
 	/**
 	 * @author Mario Fernandez
 	 */
-	void TestValidarSentido_D_ExpectedFalse() {
+	void TestValidarSentido_D_ExpectedTrue() {
 		
 		PPeaje peaj = new PPeaje();
 		String sentido = "D";
