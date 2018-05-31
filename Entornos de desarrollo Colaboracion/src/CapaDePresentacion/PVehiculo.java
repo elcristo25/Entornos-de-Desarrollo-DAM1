@@ -122,7 +122,8 @@ public class PVehiculo extends JFrame {
 	
 	
 	/**
-	 * 
+	 * Validar una matricula para que tenga este formato: "1234JKL"
+	 * @author Jesus Ruiz Alonso
 	 * @param matricula
 	 * @return
 	 */
@@ -134,6 +135,12 @@ public class PVehiculo extends JFrame {
 		}
 	}
 	
+	/**
+	 * Validar un id para que sea un numero entre 1 y 1000
+	 * @author Jesus Ruiz Alonso
+	 * @param id
+	 * @return
+	 */
 	public boolean ValidarId(int id) {
 		if(id>0 && id<1000) {
 		return true;
@@ -142,6 +149,13 @@ public class PVehiculo extends JFrame {
 		}
 	}
 	
+	
+	/**
+	 * Validar un modelo para que tenga maximo 10 caracteres y 1 mayuscula al principio
+	 * @author Jesus Ruiz Alonso
+	 * @param modelo
+	 * @return
+	 */
 	public boolean validarModelo(String modelo) {
 		if(modelo.matches("[A-Z][a-z]{2,9}")) {
 			return true;
