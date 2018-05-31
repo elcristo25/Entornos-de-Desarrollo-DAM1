@@ -209,5 +209,38 @@ class TestJornada {
 		Assert.assertEquals(false, valido);
 	}
 	
+	@Test
+	void ValidarFechaJornada_Nulo_ExpectFalse() {
+		//ARRANGE
+		PJornada jor = new PJornada();
+		String year = null;
+		String month = null;
+		String day = null;
+		
+		
+		//ACT
+		boolean valido = jor.ValidarFecha(year,month,day);
+		
+		//ASSERT
+	
+		Assert.assertEquals(false, valido);
+	}
+	
+	@Test
+	void ValidarFechaJornada_AñoMesDiaValidos_ExpectTrue() {
+		//ARRANGE
+		PJornada jor = new PJornada();
+		String year = "1994";
+		String month = "07";
+		String day = "15";
+		
+		
+		//ACT
+		boolean valido = jor.ValidarFecha(year,month,day);
+		
+		//ASSERT
+	
+		Assert.assertEquals(true, valido);
+	}
 
 }
