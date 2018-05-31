@@ -1,5 +1,7 @@
 package CapaDeDatos;
-
+/**
+ * @author: Jesus Ruiz Alonso
+ */
 public class Conduce {
 	private Trabajador tr;
 	private Vehiculo ve;

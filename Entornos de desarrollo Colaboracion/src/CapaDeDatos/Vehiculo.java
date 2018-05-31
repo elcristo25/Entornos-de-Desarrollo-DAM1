@@ -1,5 +1,7 @@
 package CapaDeDatos;
-
+/**
+ * @author: Jesus Ruiz Alonso
+ */
 public class Vehiculo {
 	private int id;
 	private String matricula;
