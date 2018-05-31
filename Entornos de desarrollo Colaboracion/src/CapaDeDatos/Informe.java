@@ -1,5 +1,7 @@
 package CapaDeDatos;
-
+/**
+ * @author: Jesus Ruiz Alonso
+ */
 public class Informe {
 	private int id;
     private String descripcion;

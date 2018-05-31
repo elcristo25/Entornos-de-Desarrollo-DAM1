@@ -1,6 +1,8 @@
 package CapaDeDatos;
 
-
+/**
+ * @author: Jesus Ruiz Alonso
+ */
 public class Flota {
 	private int id;
     private String nombre;

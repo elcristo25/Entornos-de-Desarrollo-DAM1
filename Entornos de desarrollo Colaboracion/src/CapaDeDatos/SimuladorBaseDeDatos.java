@@ -3,10 +3,8 @@ package CapaDeDatos;
 import java.util.ArrayList;
 import java.util.Iterator;
 
-import TestingPackage.ISimuladorBaseDeDatos;
 
-
-public class SimuladorBaseDeDatos implements ISimuladorBaseDeDatos {
+public class SimuladorBaseDeDatos {
 	public ArrayList<Jornada> jornadas = new ArrayList<>();
 	public ArrayList<Tramo> tramos = new ArrayList<>();
 	public ArrayList<Vehiculo> vehiculos = new ArrayList<>();
@@ -43,12 +41,19 @@ public class SimuladorBaseDeDatos implements ISimuladorBaseDeDatos {
 		return this.informes.add(_nuevoInforme) ? "OK" : "Error al insetar";
 	}
 	
+<<<<<<< HEAD
 	/**
 	 * 	Método que elimina de una lista de Jornada la jornada correspondiente al ID que se le pasa como parámetro. Retorno un String con la información del resultado de la inserción.
 	 * 	@author Christian Piñera Diez
 	 *  @param int _Id de tipo Integer que identifica la jornada que será eliminada de la lista.
 	 *  @return _String Retorna un String con OK si se ha borrado bien y Error al borrar si no.
 	 */
+=======
+	public String InsertarPeaje(Peaje _nuevoPeaje) {
+		return this.peajes.add(_nuevoPeaje) ? "OK" : "Error al insetar";
+	}
+	
+>>>>>>> 29c552a2e9fc365d69ebf42dee46af5364df3218
 	public String BorrarJornada(int _Id) {
 
 		Iterator<Jornada> it = jornadas.iterator();

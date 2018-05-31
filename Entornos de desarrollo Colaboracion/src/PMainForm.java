@@ -21,6 +21,9 @@ public class PMainForm extends JFrame {
 	 * Create the frame.
 	 */
 	public PMainForm() {
+		Trabajador t= new Trabajador();
+		Trabajador t2 = new Trabajador(9, "45781245Ñ", "nombre", "apell", "dir", "-4444", false);
+		
 		setTitle(".:.Gestion de Autopistas.:.");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 662, 233);

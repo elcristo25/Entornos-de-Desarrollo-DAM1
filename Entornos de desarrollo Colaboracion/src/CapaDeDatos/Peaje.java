@@ -4,6 +4,13 @@ public class Peaje {
 	private int id;
 	private int punto;
 	private char sentido;
+	
+	public Peaje(int id, int punto, char sentido) {
+		this.id = id;
+		this.punto = punto;
+		this.sentido = sentido;
+	}
+	
 	public int getId() {
 		return id;
 	}
