@@ -19,6 +19,14 @@ public class Vehiculo {
 		this.in=in;
 	}
 	
+	//USAR ESTE
+	public Vehiculo(int id,String matricula, String modelo, boolean remolque) {
+		this.id=id;
+		this.matricula = matricula;
+		this.modelo = modelo;
+		this.remolque = remolque;
+	}
+	
 	public Vehiculo(Vehiculo v) {
 		this.id=v.id;
 		this.matricula = v.matricula;
