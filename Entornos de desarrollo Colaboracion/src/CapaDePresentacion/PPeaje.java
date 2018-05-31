@@ -79,36 +79,94 @@ public class PPeaje extends JFrame {
 		txtSentido.setBounds(101, 123, 192, 20);
 		contentPane.add(txtSentido);
 		
-		JButton btnNewButton = new JButton("New button");
+		JButton btnNewButton = new JButton("Enviar");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				String id = txtID.getText();
 				String punto = txtPunto.getText();
 				String sentido = txtSentido.getText();
 				
-				
+				if(ValidarId(id)) {
+					if(ValidarPunto(punto)) {
+						if(ValidarSentido(sentido)) {
+							Peaje peaje = new Peaje(Integer.valueOf(id),Integer.valueOf(punto),sentido.charAt(0));
+							db.InsertarPeaje(peaje);
+						}
+					}
+				}
 				
 				//SI TODOS LOS DATOS SON VALIDOS.
-				Peaje peaje = new Peaje(//////////////);
-				db.InsertarPeaje(peaje);
+				
 			}
 		});
 		btnNewButton.setBounds(141, 195, 89, 23);
 		contentPane.add(btnNewButton);
 	}
-	
-	private boolean ValidarId() {
-		
-	}
-	//Debe ser un numero de 0-1000 y acabar en KM.
-	private boolean ValidarPunto() {
-		
-	}
-	//Debe ser valido solo Izquierda o Derecha.
-	private boolean ValidarSentido() {
-		if(izquierda o derecha)
-			return true;
-		else
+	/**
+	 * Validar un id para que sea un numero entre 1 y 1000
+	 * @author Mario Fernandez
+	 * @param id
+	 * @return
+	 */
+	//Debe ser un numero de 1-1000.
+	public boolean ValidarId(String id) {
+		   
+		try {
+			if(id.equals("")) {
+				return false;
+			}else if(Integer.valueOf(id)>1000) {
+				return false;
+			}else if(Integer.valueOf(id)<=0) {
+				return false;
+			}else {
+				return true;
+		}
+		}catch (Exception ex) {
 			return false;
+		}
+		
+	}
+	
+	/**
+	 * Validar un punto en el mapa en el que se marca el punto exacto del peaje
+	 * @author Mario Fernandez
+	 * @param punto
+	 * @return
+	 */
+	//Debe ser un numero de 0-1000.
+	public boolean ValidarPunto(String punto) {
+		try {
+			if(punto.equals("")) {
+				return false;
+			}else if(Integer.valueOf(punto)>1000) {
+				return false;
+			}else if(Integer.valueOf(punto)<0) {
+				return false;
+			}else {
+				return true;
+		}
+		}catch (Exception ex) {
+			return false;
+		}
+	}
+	/**
+	 * Validar el sentido con una I o una D segun si la direccion es Izquierda=I o Derecha=D
+	 * @author Mario Fernandez
+	 * @param sentido
+	 * @return
+	 */
+	//Debe ser valido solo I o D.
+	public boolean ValidarSentido(String sentido) {
+		
+			if(sentido.equals("I")) { 
+				return true;
+			}
+			else if (sentido.equals("D")) {
+				return true;
+			}
+			else 
+				return false;
+		
+		
 	}
 }
