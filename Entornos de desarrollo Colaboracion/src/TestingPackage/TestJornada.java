@@ -1,11 +1,15 @@
 package TestingPackage;
 
+import java.sql.Date;
+
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import CapaDeDatos.Jornada;
+import CapaDeDatos.SimuladorBaseDeDatos;
 import CapaDePresentacion.PJornada;
 import junit.framework.Assert;
 
@@ -29,6 +33,7 @@ class TestJornada {
 	void tearDown() throws Exception {
 	}
 
+	@SuppressWarnings("deprecation")
 	@Test
 	void ValidarIdTest_Positivo_ExcpetTrue() {
 		//ARRANGE
@@ -44,6 +49,7 @@ class TestJornada {
 		Assert.assertEquals(true, valido);
 	}
 	
+	@SuppressWarnings("deprecation")
 	@Test
 	void ValidarIdTest_Negativo_ExcpetFalse() {
 		//ARRANGE
@@ -59,6 +65,7 @@ class TestJornada {
 		Assert.assertEquals(false, valido);
 	}
 	
+	@SuppressWarnings("deprecation")
 	@Test
 	void ValidarIdTest_Nulo_ExcpetFalse() {
 		//ARRANGE
@@ -74,6 +81,7 @@ class TestJornada {
 		Assert.assertEquals(false, valido);
 	}
 	
+	@SuppressWarnings("deprecation")
 	@Test
 	void ValidarIdTest_Maximo_ExcpetTrue() {
 		//ARRANGE
@@ -89,6 +97,7 @@ class TestJornada {
 		Assert.assertEquals(false, valido);
 	}
 
+	@SuppressWarnings("deprecation")
 	@Test
 	void ValidarIdTest_Excesivo_ExcpetFalse() {
 		//ARRANGE
@@ -104,6 +113,7 @@ class TestJornada {
 		Assert.assertEquals(false, valido);
 	}
 	
+	@SuppressWarnings("deprecation")
 	@Test
 	void ValidarIdTest_CadenaVacia_ExcpetFalse() {
 		//ARRANGE
@@ -119,6 +129,7 @@ class TestJornada {
 		Assert.assertEquals(false, valido);
 	}
 
+	@SuppressWarnings("deprecation")
 	@Test
 	void ValidarTipoJornada_C_ExpectTrue() {
 		//ARRANGE
@@ -134,6 +145,7 @@ class TestJornada {
 		Assert.assertEquals(true, valido);
 	}
 	
+	@SuppressWarnings("deprecation")
 	@Test
 	void ValidarTipoJornada_P_ExpectTrue() {
 		//ARRANGE
@@ -149,6 +161,7 @@ class TestJornada {
 		Assert.assertEquals(true, valido);
 	}
 	
+	@SuppressWarnings("deprecation")
 	@Test
 	void ValidarTipoJornada_CualquierTexto_ExpectFalse() {
 		//ARRANGE
@@ -164,6 +177,7 @@ class TestJornada {
 		Assert.assertEquals(false, valido);
 	}
 	
+	@SuppressWarnings("deprecation")
 	@Test
 	void ValidarTipoJornada_TextoLongitud1NoEsCniP_ExpectFalse() {
 		//ARRANGE
@@ -179,6 +193,7 @@ class TestJornada {
 		Assert.assertEquals(false, valido);
 	}
 	
+	@SuppressWarnings("deprecation")
 	@Test
 	void ValidarTipoJornada_TextoVacio_ExpectFalse() {
 		//ARRANGE
@@ -194,6 +209,7 @@ class TestJornada {
 		Assert.assertEquals(false, valido);
 	}
 	
+	@SuppressWarnings("deprecation")
 	@Test
 	void ValidarTipoJornada_Nulo_ExpectFalse() {
 		//ARRANGE
@@ -209,6 +225,7 @@ class TestJornada {
 		Assert.assertEquals(false, valido);
 	}
 	
+	@SuppressWarnings("deprecation")
 	@Test
 	void ValidarFechaJornada_Nulo_ExpectFalse() {
 		//ARRANGE
@@ -226,6 +243,7 @@ class TestJornada {
 		Assert.assertEquals(false, valido);
 	}
 	
+	@SuppressWarnings("deprecation")
 	@Test
 	void ValidarFechaJornada_AñoMesDiaValidos_ExpectTrue() {
 		//ARRANGE
@@ -241,6 +259,50 @@ class TestJornada {
 		//ASSERT
 	
 		Assert.assertEquals(true, valido);
+	}
+	
+	@SuppressWarnings("deprecation")
+	@Test
+	void ValidarInsercionJornada_JornadaValida_ExtectOK() {
+		//ARRANGE
+		SimuladorBaseDeDatos db = new SimuladorBaseDeDatos();
+		Jornada jor = new Jornada(1,new Date(1994,05,15),'C');
+		
+		//ACT
+		String retornoInsercion = db.InsertarJornada(jor);
+		
+		//ASSERT
+		Assert.assertEquals("OK", retornoInsercion);
+	}
+	
+	@SuppressWarnings("deprecation")
+	@Test
+	void ValidarBorradoJornada_JornadaValida_ExtectOK() {
+		//ARRANGE
+		SimuladorBaseDeDatos db = new SimuladorBaseDeDatos();
+		Jornada jor = new Jornada(1,new Date(1994,05,15),'C');
+		db.InsertarJornada(jor);
+		
+		//ACT
+		String retornoBorrado = db.BorrarJornada(1);
+		
+		//ASSERT
+		Assert.assertEquals("OK", retornoBorrado);
+	}
+	
+	@SuppressWarnings("deprecation")
+	@Test
+	void ValidarBorradoJornada_JornadaInexistente_ExtectOK() {
+		//ARRANGE
+		SimuladorBaseDeDatos db = new SimuladorBaseDeDatos();
+		Jornada jor = new Jornada(1,new Date(1994,05,15),'C');
+		db.InsertarJornada(jor);
+		
+		//ACT
+		String retornoBorrado = db.BorrarJornada(1);
+		
+		//ASSERT
+		Assert.assertEquals("OK", retornoBorrado);
 	}
 
 }

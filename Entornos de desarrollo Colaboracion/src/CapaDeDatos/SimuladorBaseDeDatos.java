@@ -16,6 +16,12 @@ public class SimuladorBaseDeDatos implements ISimuladorBaseDeDatos {
 	public ArrayList<Peaje> peajes = new ArrayList<>();
 	public ArrayList<Trabajador> trabajadores = new ArrayList<>();
 	
+	/**
+	 * 	Método que inserta en una lista de Jornada una jornada que se le pasa como parámetro. Retorno un String con la información del resultado de la inserción.
+	 * 	@author Christian Piñera Diez
+	 *  @param _nuevaJornada Parámetro de tipo Jornada que será insertado en la lista.
+	 *  @return _String Retorna un String con OK si se ha insertado bien y Error al insertar si no.
+	 */
 	public String InsertarJornada(Jornada _nuevaJornada) {
 		return this.jornadas.add(_nuevaJornada) ? "OK" : "Error al insetar"; 
 	}
@@ -32,10 +38,17 @@ public class SimuladorBaseDeDatos implements ISimuladorBaseDeDatos {
 		return this.flotas.add(_nuevoFlotas) ? "OK" : "Error al insetar"; 
 	}
 	
+	
 	public String InsertarInforme(Informe _nuevoInforme) {
 		return this.informes.add(_nuevoInforme) ? "OK" : "Error al insetar";
 	}
 	
+	/**
+	 * 	Método que elimina de una lista de Jornada la jornada correspondiente al ID que se le pasa como parámetro. Retorno un String con la información del resultado de la inserción.
+	 * 	@author Christian Piñera Diez
+	 *  @param int _Id de tipo Integer que identifica la jornada que será eliminada de la lista.
+	 *  @return _String Retorna un String con OK si se ha borrado bien y Error al borrar si no.
+	 */
 	public String BorrarJornada(int _Id) {
 
 		Iterator<Jornada> it = jornadas.iterator();
